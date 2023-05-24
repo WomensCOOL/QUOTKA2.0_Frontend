@@ -1,15 +1,15 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-import tw from "twin.macro"
-import  Router from "./components/Common/Router"
+import tw from "twin.macro";
+import Router from "./components/Common/Router";
 
 const AppContainer = tw.div`
   flex
   w-full
   h-full
 
-`
+`;
 
 function App() {
   return (
@@ -20,5 +20,3 @@ function App() {
 }
 
 export default App;
-
-
