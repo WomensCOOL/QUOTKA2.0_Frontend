@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 import tw from "twin.macro"
-import  TopSection from "./containers/TopSection"
+import  Router from "./components/Common/Router"
 
 const AppContainer = tw.div`
   flex
@@ -14,9 +14,11 @@ const AppContainer = tw.div`
 function App() {
   return (
     <AppContainer>
-      <TopSection />
+      <Router />
     </AppContainer>
   );
 }
 
 export default App;
+
+
