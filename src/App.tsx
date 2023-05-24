@@ -1,17 +1,22 @@
-import { ThemeProvider } from 'styled-components';
+import React from 'react';
+import './App.css';
 
-import Router from '../src/components/common/Router';
-import GlobalStyle from './styles/globalStyle';
-import theme from './styles/theme';
+import tw from "twin.macro"
+import  TopSection from "./containers/TopSection"
 
-const App = () => {
+const AppContainer = tw.div`
+  flex
+  w-full
+  h-full
+
+`
+
+function App() {
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Router />
-      </ThemeProvider>
-    </>
+    <AppContainer>
+      <TopSection />
+    </AppContainer>
   );
-};
+}
+
 export default App;
