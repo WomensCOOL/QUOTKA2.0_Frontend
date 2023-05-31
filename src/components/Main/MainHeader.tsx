@@ -1,29 +1,54 @@
-import { LogoIc, HomeIc, UserIc, PencilIc } from "../../asset/icon/index";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { Link, useMatch } from "react-router-dom";
 
-export default function Header() {
-  const homeMatch = useMatch("/");
-  const userMatch = useMatch("/user");
+export default function MainHeader() {
+  const trendingMatch = useMatch("/trending");
+  const quoteMatch = useMatch("/quote");
+  const textMatch = useMatch("/text");
 
   return (
-    <div className="flex justify-center ">
-      <nav className="self-center top-0 w-full ">
-        <div className="flex justify-between items-center text-white">
-          <ul className=" md:flex items-center text-[18px] font-semibold pr-10 space-x-1">
-            <li className="hover:bg-[#212121] py-3 rounded-sm px-5">
-              <a href="#">요즘 뜨는</a>
-            </li>
-            <li className="hover:bg-[#212121] py-3 rounded-sm px-5">
-              <a href="#">인용구</a>
-            </li>
-            <li className="hover:bg-[#212121] py-3 rounded-sm px-5">
-              <a href="#">텍스트</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+    <HeaderWrapper>
+      <NavWrapper>
+        <NavUl>
+          <NavLi to="/trending" active={!!trendingMatch}>
+            요즘 뜨는
+          </NavLi>
+          <NavLi to="/quote" active={!!quoteMatch}>
+            인용구
+          </NavLi>
+          <NavLi to="/text" active={!!textMatch}>
+            텍스트
+          </NavLi>
+        </NavUl>
+      </NavWrapper>
+    </HeaderWrapper>
   );
 }
+
+const HeaderWrapper = styled.div`
+  ${tw`
+flex justify-center  p-6 ml-10 `}
+`;
+
+const NavWrapper = styled.nav`
+  ${tw`
+self-center top-0 w-full flex float-left justify-between items-center text-white `}
+`;
+
+const NavUl = styled.ul`
+  ${tw`md:flex items-center text-[18px] font-semibold pr-10 space-x-1`}
+`;
+
+const NavLi = styled(Link)<{ active: boolean }>`
+  ${tw`py-3 rounded-sm px-5`}
+
+  &:hover {
+    background-color: ${({ active }) => (active ? "#000" : "#212121")};
+  }
+
+  border-bottom: ${({ active }) =>
+    active ? "2px solid #FCD34D" : "2px solid #000"};
+  border-color: ${({ active }) => (active ? "#FCD34D" : "#000")};
+  color: ${({ active }) => (active ? "#FCD34D" : "#fff")};
+`;
