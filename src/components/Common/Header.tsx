@@ -1,43 +1,85 @@
+import { LogoIc, HomeIc, UserIc, PencilIc } from "../../asset/icon/index";
+import styled from "styled-components";
+import tw from "twin.macro";
+import { Link, useMatch } from "react-router-dom";
+
 export default function Header() {
+  const homeMatch = useMatch("/");
+  const userMatch = useMatch("/user");
+
   return (
     <header className="text-gray-600 body-font">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-          </svg>
-          <span className="ml-3 text-xl">Tailblocks</span>
-        </a>
-        <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          <a className="mr-5 hover:text-gray-900">First Link</a>
-          <a className="mr-5 hover:text-gray-900">Second Link</a>
-          <a className="mr-5 hover:text-gray-900">Third Link</a>
-          <a className="mr-5 hover:text-gray-900">Fourth Link</a>
-        </nav>
-        <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-          Button
-          <svg
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            className="w-4 h-4 ml-1"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </button>
-      </div>
+      <HeaderWrapper>
+        <LogoWrapper to="/">
+          <LogoIcon />
+        </LogoWrapper>
+        <NavWrapper>
+          <NavItem to="/" active={!!homeMatch}>
+            <NavIcon as={HomeIc} />
+          </NavItem>
+          <NavItem to="/user" active={!!userMatch}>
+            <NavIcon as={UserIc} />
+          </NavItem>
+        </NavWrapper>
+        <PencilBtn>
+          <PencilIcon />
+        </PencilBtn>
+      </HeaderWrapper>
     </header>
   );
 }
+
+const HeaderWrapper = styled.div`
+  ${tw`
+    container mx-auto flex flex-wrap pt-5 flex-col md:flex-row items-center
+  `}
+`;
+
+const LogoWrapper = styled(Link)``;
+
+const LogoIcon = styled(LogoIc)`
+  ${tw`
+    w-9
+    h-9
+    cursor-pointer
+  `}
+  fill: #fff;
+`;
+
+const NavWrapper = styled.nav`
+  ${tw`md:ml-auto flex flex-wrap items-center text-base justify-center`}
+`;
+
+const NavItem = styled(Link)<{ active: boolean }>`
+  ${tw`
+    w-5
+    h-5
+    mr-5
+    cursor-pointer
+  `}
+  fill: ${({ active }) => (active ? "#fff" : "#d3d3d3")};
+`;
+
+const NavIcon = styled.div`
+  ${tw`
+    w-5
+    h-5
+    mr-5
+    cursor-pointer
+  `}
+`;
+
+const PencilBtn = styled.button`
+  ${tw`
+    inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none rounded text-base mt-4 md:mt-0
+  `}
+  background-color: #FCD34D;
+`;
+
+const PencilIcon = styled(PencilIc)`
+  ${tw`
+    w-5
+    h-5
+    m-1.5
+  `}
+`;

@@ -5,26 +5,29 @@ import tw from "twin.macro";
 
 import Error404 from "../../pages/Error404";
 import Main from "../../pages/Main";
+import Header from "./Header";
+import MainHeader from "../Main/MainHeader";
 
 const TopSectionContainer = styled.div`
   ${tw`
 		w-full
-		flex
 		h-screen
+    flex-col
 		relative
 	`}
 `;
 
-export default function Router(){
+export default function Router() {
   return (
-    <TopSectionContainer>
-      <BrowserRouter>
+    <BrowserRouter>
+      <TopSectionContainer>
+        <Header />
+        <MainHeader />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
-      </BrowserRouter>
-    </TopSectionContainer>
+      </TopSectionContainer>
+    </BrowserRouter>
   );
-};
-
+}

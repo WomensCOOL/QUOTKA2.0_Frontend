@@ -1,17 +1,9 @@
-import React from "react";
 import "./App.css";
 
 import tw from "twin.macro";
 import Router from "./components/Common/Router";
 
-const AppContainer = tw.div`
-  flex
-  w-full
-  h-full
-
-`;
-
-function App() {
+export default function App() {
   return (
     <AppContainer>
       <Router />
@@ -19,4 +11,8 @@ function App() {
   );
 }
 
-export default App;
+const AppContainer = tw.div`
+  flex
+  w-full
+  h-full
+`;
