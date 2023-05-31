@@ -31,7 +31,7 @@ export default function Header() {
 
 const HeaderWrapper = styled.div`
   ${tw`
-    container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center
+    container mx-auto flex flex-wrap pt-5 flex-col md:flex-row items-center
   `}
 `;
 
@@ -73,7 +73,7 @@ const PencilBtn = styled.button`
   ${tw`
     inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none rounded text-base mt-4 md:mt-0
   `}
-  background-color: rgb(252 211 77);
+  background-color: #FCD34D;
 `;
 
 const PencilIcon = styled(PencilIc)`
