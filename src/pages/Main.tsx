@@ -1,3 +1,9 @@
+import Quote from "../components/Quote/Quote";
+
 export default function Main() {
-  return <div>메인페이지</div>;
+  return (
+    <div>
+      <Quote />
+    </div>
+  );
 }
