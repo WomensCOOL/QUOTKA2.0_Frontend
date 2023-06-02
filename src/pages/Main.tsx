@@ -4,6 +4,7 @@ export default function Main() {
   return (
     <div>
       <Quote />
+      <Quote />
     </div>
   );
 }
