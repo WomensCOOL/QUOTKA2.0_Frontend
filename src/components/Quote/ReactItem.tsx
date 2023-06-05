@@ -7,12 +7,8 @@ import {
   
   import styled from "styled-components";
   import tw from "twin.macro";
-  
-  import { Link } from "react-router-dom";
-  
+    
   export default function ReactItemComponent() {
- 
-  
     return (
 
               <ReactItem>
@@ -21,10 +17,8 @@ import {
                 <ReactIcon as={StarIc} />
                 <ReactIcon as={HeartIc} />
               </ReactItem>
-           
     );
   }
-  
   
   const ReactItem = styled.span`
     ${tw`text-gray-400 ml-auto inline-flex items-center leading-none text-sm`}

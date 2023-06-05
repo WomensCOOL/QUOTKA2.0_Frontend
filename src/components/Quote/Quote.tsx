@@ -46,10 +46,6 @@ const QuoteContainer = styled.div`
   ${tw`flex gap-4 md:gap-6 text-white`}
 `;
 
-const UserWrapper = styled.div`
-  ${tw`flex h-12 w-16 items-center justify-center rounded-sm bg-indigo-500 md:h-14 md:w-20 md:rounded-sm`}
-`;
-
 const TextWrapper = styled.div`
   ${tw`rounded-sm bg-[#212121] p-5 pt-4
 `}
