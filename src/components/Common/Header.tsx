@@ -8,7 +8,7 @@ export default function Header() {
   const userMatch = useMatch("/user");
 
   return (
-    <header className="text-gray-600 body-font">
+    <header className="text-gray-600 body-font sticky top-0 bg-black z-10 pb-3">
       <HeaderWrapper>
         <LogoWrapper to="/">
           <LogoIcon />

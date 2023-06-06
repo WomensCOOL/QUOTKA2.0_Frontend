@@ -28,7 +28,7 @@ export default function MainHeader() {
 
 const HeaderWrapper = styled.div`
   ${tw`
-flex justify-center pl-16 pr-16 pt-6 `}
+flex justify-center pl-16 pr-16 pt-1 sticky top-[4.5rem] bg-black z-10`}
 `;
 
 const NavWrapper = styled.nav`
