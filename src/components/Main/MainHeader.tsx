@@ -3,7 +3,7 @@ import tw from "twin.macro";
 import { Link, useMatch } from "react-router-dom";
 
 export default function MainHeader() {
-  const trendingMatch = useMatch("/trending");
+  const trendingMatch = useMatch("/");
   const quoteMatch = useMatch("/quote");
   const textMatch = useMatch("/text");
 
@@ -11,7 +11,7 @@ export default function MainHeader() {
     <HeaderWrapper>
       <NavWrapper>
         <NavUl>
-          <NavLi to="/trending" active={!!trendingMatch}>
+          <NavLi to="/" active={!!trendingMatch}>
             요즘 뜨는
           </NavLi>
           <NavLi to="/quote" active={!!quoteMatch}>
@@ -28,7 +28,7 @@ export default function MainHeader() {
 
 const HeaderWrapper = styled.div`
   ${tw`
-flex justify-center  p-6 ml-10 `}
+flex justify-center pl-16 pr-16 pt-1 sticky top-[4.5rem] bg-black z-10`}
 `;
 
 const NavWrapper = styled.nav`

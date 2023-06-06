@@ -1,8 +1,12 @@
 import Quote from "../components/Quote/Quote";
 
-export default function Main() {
+export default function QuotePage() {
   return (
     <div>
+      <Quote />
+      <Quote />
+      <Quote />
+      <Quote />
       <Quote />
     </div>
   );

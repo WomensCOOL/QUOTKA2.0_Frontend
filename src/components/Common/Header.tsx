@@ -8,7 +8,7 @@ export default function Header() {
   const userMatch = useMatch("/user");
 
   return (
-    <header className="text-gray-600 body-font">
+    <header className="text-gray-600 body-font sticky top-0 bg-black z-10 pb-3">
       <HeaderWrapper>
         <LogoWrapper to="/">
           <LogoIcon />
@@ -51,13 +51,7 @@ const NavWrapper = styled.nav`
 `;
 
 const NavItem = styled(Link)<{ active: boolean }>`
-  ${tw`
-    w-5
-    h-5
-    mr-5
-    cursor-pointer
-  `}
-  fill: ${({ active }) => (active ? "#fff" : "#d3d3d3")};
+  ${({ active }) => (active ? "#fff" : "#d3d3d3")};
 `;
 
 const NavIcon = styled.div`

@@ -7,6 +7,7 @@ import Error404 from "../../pages/Error404";
 import Main from "../../pages/Main";
 import Header from "./Header";
 import MainHeader from "../Main/MainHeader";
+import Quote from "../../pages/Quote";
 
 const TopSectionContainer = styled.div`
   ${tw`
@@ -25,6 +26,7 @@ export default function Router() {
         <MainHeader />
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="/quote" element={<Quote />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
       </TopSectionContainer>
