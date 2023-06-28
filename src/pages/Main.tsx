@@ -6,11 +6,11 @@ import { showPopup } from "../recoil/showPopup";
 
 export default function Main() {
   const [show, setShow] = useRecoilState(showPopup);
-  function hideShow() {
+  function handlePopup() {
     setShow(!show);
   }
   return (
-    <div onClick={hideShow}>
+    <div onClick={handlePopup}>
       <Trending />
       <Quote />
       {show && <Write />}
