@@ -6,6 +6,7 @@ import { Link, useMatch } from "react-router-dom";
 export default function Header() {
   const homeMatch = useMatch("/");
   const userMatch = useMatch("/user");
+  const writeMatch = useMatch("/write");
 
   return (
     <header className="text-gray-600 body-font sticky top-0 bg-black z-10 pb-3">
@@ -20,10 +21,12 @@ export default function Header() {
           <NavItem to="/user" active={!!userMatch}>
             <NavIcon as={UserIc} />
           </NavItem>
+          <NavItem to="/write" active={!!writeMatch}>
+            <PencilBtn>
+              <PencilIcon />
+            </PencilBtn>
+          </NavItem>
         </NavWrapper>
-        <PencilBtn>
-          <PencilIcon />
-        </PencilBtn>
       </HeaderWrapper>
     </header>
   );

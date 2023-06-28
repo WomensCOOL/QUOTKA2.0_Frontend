@@ -2,10 +2,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import { Navigation } from "swiper";
+
 import styled from "styled-components";
 import tw from "twin.macro";
 
-import { Navigation } from "swiper";
 import TrendingItem from "./TrendingItem";
 
 export default function Trending() {
