@@ -1,12 +1,21 @@
-import { LogoIc, HomeIc, UserIc, PencilIc } from "../../asset/icon/index";
 import styled from "styled-components";
 import tw from "twin.macro";
+
+import { LogoIc, HomeIc, UserIc, PencilIc } from "../../asset/icon/index";
+
 import { Link, useMatch } from "react-router-dom";
 
+import { useRecoilState } from "recoil";
+import { showPopup } from "../../recoil/showPopup";
+
 export default function Header() {
+  const [show, setShow] = useRecoilState(showPopup);
   const homeMatch = useMatch("/");
   const userMatch = useMatch("/user");
-  const writeMatch = useMatch("/write");
+
+  function handlePopup() {
+    setShow(true);
+  }
 
   return (
     <header className="text-gray-600 body-font sticky top-0 bg-black z-10 pb-3">
@@ -21,11 +30,9 @@ export default function Header() {
           <NavItem to="/user" active={!!userMatch}>
             <NavIcon as={UserIc} />
           </NavItem>
-          <NavItem to="/write" active={!!writeMatch}>
-            <PencilBtn>
-              <PencilIcon />
-            </PencilBtn>
-          </NavItem>
+          <PencilBtn onClick={handlePopup}>
+            <PencilIcon />
+          </PencilBtn>
         </NavWrapper>
       </HeaderWrapper>
     </header>
