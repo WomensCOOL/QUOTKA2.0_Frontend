@@ -1,13 +1,16 @@
 import "./App.css";
+import { RecoilRoot } from "recoil";
 
 import tw from "twin.macro";
 import Router from "./components/Common/Router";
 
 export default function App() {
   return (
-    <AppContainer>
-      <Router />
-    </AppContainer>
+    <RecoilRoot>
+      <AppContainer>
+        <Router />
+      </AppContainer>
+    </RecoilRoot>
   );
 }
 
